@@ -87,6 +87,11 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
         int recordingBufferSize = bufferSize * 3;
         recorder = new AudioRecord(audioSource, sampleRateInHz, channelConfig, audioFormat, recordingBufferSize);
     }
+    
+    @ReactMethod
+    public String getOutFilePath() {
+        return outFile;
+    }
 
     @ReactMethod
     public void start() {
