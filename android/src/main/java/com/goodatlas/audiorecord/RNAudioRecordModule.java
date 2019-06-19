@@ -119,6 +119,7 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
                     }
 
                     recorder.stop();
+                    recorder.release();
                     os.close();
                     saveAsWav();
                 } catch (Exception e) {
