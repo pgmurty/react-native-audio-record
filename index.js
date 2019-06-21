@@ -5,7 +5,7 @@ const EventEmitter = new NativeEventEmitter(RNAudioRecord);
 const AudioRecord = {};
 
 AudioRecord.init = options => RNAudioRecord.init(options);
-AudioRecord.getOutFilePath = () => RNAudioRecord.getOutFilePath();
+AudioRecord.getOutFilePath = (aPromise) => RNAudioRecord.getOutFilePath(aPromise);
 AudioRecord.start = () => RNAudioRecord.start();
 AudioRecord.stop = () => RNAudioRecord.stop();
 
