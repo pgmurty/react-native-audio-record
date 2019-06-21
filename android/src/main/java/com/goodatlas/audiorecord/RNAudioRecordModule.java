@@ -89,8 +89,8 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
     }
     
     @ReactMethod
-    public String getOutFilePath() {
-        return outFile;
+    public void getOutFilePath(Promise aPromise) {
+       promise.resolve(outFile);
     }
 
     @ReactMethod
