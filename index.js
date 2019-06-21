@@ -10,7 +10,8 @@ AudioRecord.start = () => RNAudioRecord.start();
 AudioRecord.stop = () => RNAudioRecord.stop();
 
 const eventsMap = {
-  data: 'data'
+  data: 'data',
+  wavFileReady : 'wavFileReady'
 };
 
 AudioRecord.on = (event, callback) => {
