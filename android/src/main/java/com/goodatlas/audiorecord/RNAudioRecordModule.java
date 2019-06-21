@@ -34,7 +34,6 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
 
     private String tmpFile;
     private String outFile;
-    private Promise iPromise;
 
 
     public RNAudioRecordModule(ReactApplicationContext reactContext) {
@@ -123,7 +122,7 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
                     recorder.release();
                     os.close();
                     saveAsWav();
-                    iPromise.resolve(outFile);
+                    eventEmitter.emit("wavFileReady", outFile);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -136,7 +135,7 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void stop(Promise promise) {
         isRecording = false;
-        iPromise = promise;
+        promise.resolve(outFile;;
     }
 
     private void saveAsWav() {
