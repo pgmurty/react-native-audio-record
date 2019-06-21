@@ -135,7 +135,7 @@ public class RNAudioRecordModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void stop(Promise promise) {
         isRecording = false;
-        promise.resolve(outFile;;
+        promise.resolve(outFile);
     }
 
     private void saveAsWav() {
